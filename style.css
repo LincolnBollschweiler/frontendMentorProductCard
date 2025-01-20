@@ -130,6 +130,7 @@ main .card .price {
 main .card .price :first-child {
   color: var(--green);
   font-size: 1.5rem;
+  font-family: "Fraunces";
 }
 main .card .price :nth-child(2) {
   text-decoration: line-through;
