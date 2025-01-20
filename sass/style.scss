@@ -1,0 +1,104 @@
+@forward "./andyBell.scss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap");
+
+body {
+  --green: hsl(158, 36%, 37%);
+  --dark-green: hsl(158, 36%, 30%);
+  --cream: hsl(30, 38%, 92%);
+  --dark-blue: hsl(212, 21%, 14%);
+  --dark-gray-blue: hsl(228, 12%, 48%);
+  background: var(--cream);
+  min-height: 100vh;
+  font-family: "Montserat";
+  color: var(--dark-gray-blue);
+}
+
+h1 {
+  margin: 0;
+  color: var(--dark-blue);
+  line-height: 0.9;
+  font-size: 2.75rem;
+}
+
+h4 {
+  margin: 0;
+  font-family: "Fraunces";
+}
+
+main {
+  min-height: calc(100vh - 2rem);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 350px);
+  align-content: center;
+  justify-content: center;
+  max-width: 700px;
+  margin: auto;
+
+  .image {
+    background-image: url("images/image-product-desktop.jpg");
+    background-size: cover;
+    aspect-ratio: 600 / 900;
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 1.75rem;
+    background: #fff;
+    border-radius: 0 0.5rem 0.5rem 0;
+    overflow: hidden;
+    gap: 1rem;
+
+    .price {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      :first-child {
+        color: var(--green);
+        font-size: 1.5rem;
+      }
+
+      :nth-child(2) {
+        text-decoration: line-through;
+        font-size: 0.7rem;
+      }
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      background: var(--green);
+      border: none;
+      padding: 0.8rem 1rem;
+      border-radius: 5px;
+
+      &:hover {
+        background: var(--dark-green);
+      }
+
+      img {
+        display: inline-block;
+        width: 1rem;
+        margin-right: 0.7rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .image {
+      background-image: url("images/image-product-mobile.jpg");
+      aspect-ratio: 686 / 480;
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
+
+    .card {
+      border-radius: 0 0 0.5rem 0.5rem;
+    }
+  }
+}
